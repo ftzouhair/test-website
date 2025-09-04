@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Essentials -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VELARION Skies — Bespoke Private Jet Charters</title>
+  <meta name="description" content="VELARION Skies delivers bespoke private jet charters with concierge-level care. No membership. No hidden fees. 15‑minute response.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0E172A">
+
+  <!-- Canonical (GitHub Pages subpath safe) -->
+  <link rel="canonical" href="https://ftzouhair.github.io/velarion-skies/">
+
+  <!-- Favicon (replace if you have your own) -->
+  <link rel="icon" href="assets/images/favicon.ico">
+
+  <!-- Social -->
+  <meta property="og:title" content="VELARION Skies — Bespoke Private Jet Charters">
+  <meta property="og:description" content="Bespoke private jet charters. No membership. No hidden fees. 15‑minute response.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ftzouhair.github.io/velarion-skies/">
+  <meta property="og:image" content="https://ftzouhair.github.io/velarion-skies/assets/images/og-image.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VELARION Skies — Bespoke Private Jet Charters">
+  <meta name="twitter:description" content="Bespoke private jet charters with concierge-level care.">
+  <meta name="twitter:image" content="https://ftzouhair.github.io/velarion-skies/assets/images/og-image.webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Preload hero for faster LCP -->
+  <link rel="preload" as="image" href="assets/images/hero.webp" imagesrcset="assets/images/hero.avif 1x, assets/images/hero.webp 1x" imagesizes="100vw">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- Minimal critical CSS for first paint -->
+  <style>
+    :root{
+      --bg:#0E172A; --fg:#E6EAF2; --muted:#AEB6C2; --gold:#D4AF37; --ink:#0B1220;
+      --card:#FFFFFF08; --line:#FFFFFF1A; --maxw:1200px;
+    }
+    html{scroll-behavior:smooth}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;background:#fff;color:#000;padding:8px 12px;border-radius:6px;z-index:10000}
+    header{position:sticky;top:0;background:rgba(14,23,42,.7);backdrop-filter:blur(8px);border-bottom:1px solid #FFFFFF1A;z-index:1000}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:12px;font-family:"Playfair Display",serif}
+    .brand img{height:28px;width:auto}
+    .brand span{font-size:1.125rem;letter-spacing:.04em}
+    .nav-links{display:flex;align-items:center;gap:18px}
+    .nav-toggle{display:none;background:none;border:0;color:var(--fg);font-size:1.1rem}
+    .btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#111;padding:10px 16px;border-radius:999px;font-weight:600;border:0;cursor:pointer}
+    .btn.ghost{background:transparent;border:1px solid #D4AF37AA;color:#fff}
+    .hero{position:relative;isolation:isolate}
+    .hero-media{position:absolute;inset:0;z-index:-1;overflow:hidden}
+    .hero-media img{width:100%;height:100%;object-fit:cover;filter:brightness(.62)}
+    .hero-inner{padding:96px 0 72px}
+    h1,h2,h3{font-family:"Playfair Display",serif;margin:0 0 10px}
+    h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.12}
+    .sub{color:var(--muted);max-width:65ch;margin:10px 0 22px}
+    section{padding:64px 0;border-top:1px solid var(--line)}
+    .grid{display:grid;gap:24px}
+    .grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .grid.cols-4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+    .card .p{padding:16px}
+    .chip{border:1px solid #D4AF37; border-color:#D4AF3799;border-radius:999px;padding:6px 10px;display:inline-flex;align-items:center;gap:8px}
+    .chips{display:flex;gap:10px;flex-wrap:wrap}
+    .sticky-cta{position:fixed;right:20px;bottom:20px;z-index:999;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    input,textarea,select{width:100%;padding:12px 14px;border-radius:10px;border:1px solid #FFFFFF2A;background:#FFFFFF08;color:var(--fg)}
+    label{display:block;margin:12px 0 6px;color:#D9DDEA}
+    .footer-grid{display:grid;gap:24px;grid-template-columns:1.2fr .8fr}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+    footer{padding:56px 0}
+    .muted{color:var(--muted)}
+    /* Mobile nav */
+    @media (max-width:820px){
+      .nav-links{position:fixed;inset:64px 0 auto 0;background:rgba(14,23,42,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:16px;flex-direction:column;align-items:flex-start;gap:14px;transform:translateY(-120%);transition:transform .28s ease;z-index:1000}
+      .nav-links.open{transform:translateY(0)}
+      .nav-toggle{display:inline-flex}
+      .hide-mobile{display:none}
+    }
+  </style>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"VELARION Skies",
+    "url":"https://ftzouhair.github.io/velarion-skies/",
+    "logo":"https://ftzouhair.github.io/velarion-skies/assets/images/logo.svg",
+    "description":"Bespoke private jet charters with concierge-level care. No membership. No hidden fees.",
+    "contactPoint":[{
+      "@type":"ContactPoint",
+      "contactType":"customer service",
+      "email":"contact@velarionskies.com",
+      "areaServed":"Worldwide",
+      "availableLanguage":["en","fr","ar"]
+    }],
+    "sameAs":[
+      "https://www.instagram.com/velarionskies",
+      "https://www.linkedin.com/company/velarionskies",
+      "https://x.com/velarionskies",
+      "https://facebook.com/velarionskies"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: WebSite with SearchAction (optional) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://ftzouhair.github.io/velarion-skies/",
+    "name":"VELARION Skies",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://ftzouhair.github.io/velarion-skies/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Header -->
+  <header role="banner" aria-label="Primary">
+    <div class="container nav">
+      <a class="brand" href="./" aria-label="VELARION Skies home">
+        <img src="assets/images/logo.svg" alt="VELARION Skies logo" width="112" height="28">
+        <span>VELARION Skies</span>
+      </a>
+
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        Menu
+      </button>
+
+      <nav id="primary-nav" class="nav-links" aria-label="Main navigation">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#fleet" class="nav-link">Fleet</a>
+        <a href="#destinations" class="nav-link">Destinations</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#contact" class="btn hide-mobile" aria-label="Book your flight">Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero" aria-label="Hero">
+    <div class="hero-media" aria-hidden="true">
+      <picture>
+        <source srcset="assets/images/hero.avif" type="image/avif">
+        <source srcset="assets/images/hero.webp" type="image/webp">
+        <img src="assets/images/hero.jpg" alt="" width="1920" height="1080" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="container hero-inner">
+      <div class="chips" aria-label="Trust indicators">
+        <span class="chip">ARGUS‑rated partners</span>
+        <span class="chip">24/7 concierge</span>
+        <span class="chip">Transparent pricing</span>
+      </div>
+      <h1>Bespoke Private Jet Charters</h1>
+      <p class="sub">No membership. No hidden fees. Personalized itineraries and aircraft, on your terms. 15‑minute response from our concierge team.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn" href="#contact">Request Itinerary</a>
+        <a class="btn ghost" href="#destinations">Explore Destinations</a>
+      </div>
+    </div>
+  </section>
+
+  <main id="main" role="main">
+    <!-- Services -->
+    <section id="services" aria-labelledby="services-h">
+      <div class="container">
+        <h2 id="services-h">Services</h2>
+        <p class="sub">From business‑critical hops to curated escapes, we match you with the right aircraft—precisely timed, impeccably handled.</p>
+        <div class="grid cols-3">
+          <article class="card">
+            <img src="assets/images/service-business.webp" alt="Executive on ramp near jet" loading="lazy" width="640" height="400">
+            <div class="p">
+              <h3>Business Charters</h3>
+              <p>Direct routes, privacy, and agility—arrive ready to lead.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/images/service-leisure.webp" alt="Couple boarding jet for leisure" loading="lazy" width="640" height="400">
+            <div class="p">
+              <h3>Leisure Escapes</h3>
+              <p>Resorts, islands, events—entrances that feel effortless.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/images/service-cargo.webp" alt="Time‑critical cargo loading" loading="lazy" width="640" height="400">
+            <div class="p">
+              <h3>Time‑Critical Cargo</h3>
+              <p>Dedicated lift for high‑value shipments under tight timelines.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fleet -->
+    <section id="fleet" aria-labelledby="fleet-h">
+      <div class="container">
+        <h2 id="fleet-h">Fleet</h2>
+        <p class="sub">Select by mission: passenger count, range, baggage, and runway profile—our network spans every class.</p>
+        <div class="grid cols-4">
+          <article class="card">
+            <img src="assets/images/fleet-light.webp" alt="Light jet class" loading="lazy" width="600" height="360">
+            <div class="p">
+              <h3>Light Jets</h3>
+              <p class="muted">Up to 6 pax · 1,200–1,800 nm</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/images/fleet-midsize.webp" alt="Midsize jet class" loading="lazy" width="600" height="360">
+            <div class="p">
+              <h3>Midsize</h3>
+              <p class="muted">Up to 8 pax · 1,500–2,200 nm</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/images/fleet-supermid.webp" alt="Super‑midsize jet class" loading="lazy" width="600" height="360">
+            <div class="p">
+              <h3>Super‑Midsize</h3>
+              <p class="muted">Up to 9 pax · 2,500–3,500 nm</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/images/fleet-heavy.webp" alt="Heavy jet class" loading="lazy" width="600" height="360">
+            <div class="p">
+              <h3>Heavy & Ultra‑Long</h3>
+              <p class="muted">10–16 pax · 4,000–7,500 nm</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destinations -->
+    <section id="destinations" aria-labelledby="destinations-h">
+      <div class="container">
+        <h2 id="destinations-h">Featured Destinations</h2>
+        <p class="sub">Curated routes aligned with peak seasons—each image color‑graded to our palette.</p>
+        <div class="grid cols-3">
+          <article class="card">
+            <img src="assets/images/dest-marrakech.webp" alt="Marrakech — desert sunsets and riad rooftops" loading="lazy" width="640" height="400">
+            <div class="p">
+              <h3>Marrakech</h3>
+              <p>Touch down minutes from the Medina—ground transfers arranged.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/images/dest-nice.webp" alt="Côte d’Azur — Mediterranean blues" loading="lazy" width="640" height="400">
+            <div class="p">
+              <h3>Côte d’Azur</h3>
+              <p>From Cannes to Monaco—summer, choreographed.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/images/dest-dubai.webp" alt="Dubai — skyline and desert horizons" loading="lazy" width="640" height="400">
+            <div class="p">
+              <h3>Dubai</h3>
+              <p>Elite arrivals, precision service, round‑the‑clock.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" aria-labelledby="process-h">
+      <div class="container">
+        <h2 id="process-h">How It Works</h2>
+        <div class="grid cols-4">
+          <article class="card"><div class="p">
+            <h3>1. Brief</h3>
+            <p>Share route, dates, pax, and preferences.</p>
+          </div></article>
+          <article class="card"><div class="p">
+            <h3>2. Curate</h3>
+            <p>We shortlist aircraft and present transparent pricing.</p>
+          </div></article>
+          <article class="card"><div class="p">
+            <h3>3. Confirm</h3>
+            <p>Lock in schedule; concierge handles the details.</p>
+          </div></article>
+          <article class="card"><div class="p">
+            <h3>4. Fly</h3>
+            <p>Seamless transfers, attentive cabin, punctual arrivals.</p>
+          </div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" aria-labelledby="testimonials-h">
+      <div class="container">
+        <h2 id="testimonials-h">Testimonials</h2>
+        <div class="grid cols-3">
+          <figure class="card">
+            <div class="p">
+              <blockquote cite="#">
+                “Flawless from inquiry to wheels‑up. The quickest, clearest options I’ve seen.”
+              </blockquote>
+              <figcaption class="muted">— A. Benali, CEO</figcaption>
+            </div>
+          </figure>
+          <figure class="card">
+            <div class="p">
+              <blockquote cite="#">
+                “They anticipated everything—late checkout, pet paperwork, even our favorite champagne.”
+              </blockquote>
+              <figcaption class="muted">— L. Moreau, Producer</figcaption>
+            </div>
+          </figure>
+          <figure class="card">
+            <div class="p">
+              <blockquote cite="#">
+                “Transparent pricing and impeccable timing. We’ll be back.”
+              </blockquote>
+              <figcaption class="muted">— D. Rahman, Investor</figcaption>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-h">
+      <div class="container">
+        <h2 id="faq-h">FAQ</h2>
+        <div class="grid cols-3">
+          <details class="card"><summary class="p"><strong>Do you require membership?</strong></summary><div class="p"><p>No membership and no hidden fees—book per mission.</p></div></details>
+          <details class="card"><summary class="p"><strong>How fast is your response?</strong></summary><div class="p"><p>We respond within 15 minutes, 24/7.</p></div></details>
+          <details class="card"><summary class="p"><strong>Can you arrange ground transfers?</strong></summary><div class="p"><p>Yes—chauffeurs, security, and hospitality on request.</p></div></details>
+          <details class="card"><summary class="p"><strong>What about pets and special catering?</strong></summary><div class="p"><p>Pet‑friendly options and bespoke menus are available.</p></div></details>
+          <details class="card"><summary class="p"><strong>Which regions do you serve?</strong></summary><div class="p"><p>Global coverage via vetted operator partners.</p></div></details>
+          <details class="card"><summary class="p"><strong>How is safety ensured?</strong></summary><div class="p"><p>ARGUS/IS‑BAO operators, experienced crews, and rigorous audits.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-h">
+      <div class="container">
+        <h2 id="contact-h">Request Your Flight</h2>
+        <div class="footer-grid">
+          <form id="contact-form" aria-describedby="contact-note" novalidate>
+            <label for="name">Full name</label>
+            <input id="name" name="name" autocomplete="name" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel">
+
+            <label for="route">Route & date</label>
+            <input id="route" name="route" placeholder="e.g., RAK → NCE, 22 Sep" required>
+
+            <label for="aircraft">Preferred aircraft (optional)</label>
+            <select id="aircraft" name="aircraft">
+              <option value="">No preference</option>
+              <option>Light Jet</option>
+              <option>Midsize</option>
+              <option>Super‑Midsize</option>
+              <option>Heavy / Ultra‑Long</option>
+            </select>
+
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Passengers, luggage, catering, pets"></textarea>
+
+            <p id="contact-note" class="muted">We reply within 15 minutes. No membership, no hidden fees.</p>
+            <button class="btn" type="submit" aria-label="Submit request">Send request</button>
+          </form>
+
+          <aside aria-label="Concierge contact">
+            <h3>Concierge</h3>
+            <p class="sub">Prefer WhatsApp or phone? We’ll match your pace, 24/7.</p>
+            <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
+              <li><a href="mailto:contact@velarionskies.com" aria-label="Email concierge">contact@velarionskies.com</a></li>
+              <li><a href="tel:+0000000000" aria-label="Call concierge">+00 000 000 000</a></li>
+              <li><a href="https://www.instagram.com/velarionskies" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/company/velarionskies" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a></li>
+              <li><a href="https://wa.me/0000000000" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo" aria-label="Footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <small>&copy; <span id="year"></span> VELARION Skies. All rights reserved.</small>
+      <small>
+        <a href="ACCESSIBILITY.md">Accessibility</a> ·
+        <a href="PRIVACY.md">Privacy</a> ·
+        <a href="#hero">Back to top</a>
+      </small>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA -->
+  <a href="#contact" class="btn sticky-cta" aria-label="Quick book — scroll to contact">Book Your Flight</a>
+
+  <!-- Main JS bundle -->
+  <script src="assets/js/main.js" defer></script>
+
+  <!-- Inline essentials (safe even if main.js is empty) -->
+  <script>
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle with focus management
+    (function(){
+      const toggle = document.getElementById('nav-toggle');
+      const nav = document.getElementById('primary-nav');
+      if(!toggle || !nav) return;
+      const links = nav.querySelectorAll('a');
+      function setState(open){
+        nav.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open);
+        if(open && links.length) links[0].focus();
+      }
+      toggle.addEventListener('click', () => setState(!nav.classList.contains('open')));
+      // Close on link click (mobile)
+      links.forEach(a => a.addEventListener('click', () => setState(false)));
+      // Close on escape
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape') setState(false);
+      });
+    })();
+
+    // Smooth scroll (for browsers without CSS smooth)
+    (function(){
+      const supportsSmooth = 'scrollBehavior' in document.documentElement.style;
+      if(supportsSmooth) return;
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', e=>{
+          const id = a.getAttribute('href').slice(1);
+          const el = document.getElementById(id);
+          if(!el) return;
+          e.preventDefault();
+          el.scrollIntoView({behavior:'auto', block:'start'});
+          el.setAttribute('tabindex','-1'); el.focus({preventScroll:true});
+        });
+      });
+    })();
+
+    // Lightweight form handler: validates required fields and opens mailto fallback.
+    (function(){
+      const form = document.getElementById('contact-form');
+      if(!form) return;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const name = (data.get('name')||'').trim();
+        const email = (data.get('email')||'').trim();
+        const route = (data.get('route')||'').trim();
+        if(!name || !email || !route){
+          alert('Please fill name, email, and route.');
+          return;
+        }
+        const phone = (data.get('phone')||'').trim();
+        const aircraft = (data.get('aircraft')||'').trim();
+        const notes = (data.get('notes')||'').trim();
+        const subject = encodeURIComponent('VELARION Skies — Charter Request');
+        const body = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nRoute & date: ${route}\nAircraft: ${aircraft}\nNotes: ${notes}`
+        );
+        window.location.href = `mailto:contact@velarionskies.com?subject=${subject}&body=${body}`;
+      });
+    })();
+  </script>
+
+  <noscript>
+    <div style="position:fixed;bottom:0;left:0;right:0;background:#111;color:#fff;padding:10px 16px;text-align:center;z-index:2000">
+      For the best experience, enable JavaScript. Core content remains accessible.
+    </div>
+  </noscript>
+</body>
+</html>

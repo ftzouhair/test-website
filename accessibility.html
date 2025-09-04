@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Accessibility — VELARION Skies</title>
+  <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a class="logo" href="index.html">VELARION <span class="text-gold">Skies</span></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <h1>Accessibility Audit</h1>
+    <p>This page summarizes key accessibility notes for VELARION Skies.</p>
+    <h2>Passes</h2>
+    <ul>
+      <li>Semantic landmarks (header, main, footer) and headings hierarchy.</li>
+      <li>Skip link for keyboard users.</li>
+      <li>Focus-visible styles on interactive elements.</li>
+    </ul>
+    <h2>Fixes</h2>
+    <ul>
+      <li>Ensure all images have descriptive alt text (decorative images: empty alt).</li>
+      <li>Verify color contrast &ge; 4.5:1 for text over imagery.</li>
+      <li>Add aria-labels to icon-only links or buttons.</li>
+    </ul>
+  </main>
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2025 VELARION Skies</p>
+      <a href="index.html">Back to home</a>
+    </div>
+  </footer>
+</body>
+</html>

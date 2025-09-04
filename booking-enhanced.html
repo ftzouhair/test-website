@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Flight - VELARION Skies</title>
+    <meta name="description" content="Book your private jet charter with VELARION Skies. Experience luxury, discretion and safety with our premium aviation services." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="assets/css/critical.css">
+    <!-- Main stylesheet (non-blocking) -->
+    <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
+    <!-- Booking-specific styles -->
+    <link rel="stylesheet" href="assets/css/destinations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/ui-enhancements.css" media="print" onload="this.media='all'">
+    <!-- Web app manifest -->
+    <link rel="manifest" href="assets/manifest.json">
+</head>
+<body class="page-booking">
+
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+    <!-- Header -->
+    <header role="banner">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">VELARION <span class="text-gold">Skies</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="booking.html" aria-current="page">Book Flight</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="legal.html">Legal</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-menu" aria-label="Toggle menu" aria-controls="mainNav" aria-expanded="false">
+                    <svg class="icon icon-menu" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+                        <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main id="mainContent" role="main">
+        <div class="container">
+        
+            <!-- Page Title Section -->
+            <section class="page-title animate-on-scroll">
+                <div class="container">
+                    <h1>Book Your Private Flight</h1>
+                    <p>Complete our secure online request form to begin your journey with VELARION Skies.</p>
+                </div>
+            </section>
+
+            <!-- Booking Section -->
+            <section id="booking" class="booking animate-on-scroll" style="padding-top: 50px; padding-bottom: 50px;">
+                <div class="container">
+                    <div class="booking-container">
+                        <div class="booking-image">
+                            <img src="assets/images/flight-booking/flight-booking-1.png" alt="Friendly booking assistant ready to help with your flight plans." width="600" height="400" loading="lazy">
+                        </div>
+                        <div class="booking-form">
+                            <h3>Online Request for Private Flight</h3>
+                            <div class="booking-note">
+                                <h4>Important Note:</h4>
+                                <p>Begin your journey by providing your flight details below. Our team will contact you shortly to confirm your booking and provide further details.</p>
+                            </div>
+                            <form id="bookingForm" action="/api/book" method="post">
+                                <div class="form-group">
+                                    <label>Trip Type:</label>
+                                    <div class="trip-type-selector">
+                                        <button type="button" class="trip-type-btn active" data-value="one-way">One-Way</button>
+                                        <button type="button" class="trip-type-btn" data-value="round-trip">Round-Trip</button>
+                                        <button type="button" class="trip-type-btn" data-value="multi-city">Multi-City</button>
+                                        <input type="hidden" id="trip-type" name="trip-type" value="one-way">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="from">From:</label>
+                                        <input type="text" id="from" name="from" placeholder="City or Airport Name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="to">To:</label>
+                                        <input type="text" id="to" name="to" placeholder="City or Airport Name" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="depart-date">Depart Date:</label>
+                                        <input type="date" id="depart-date" name="depart-date" required>
+                                    </div>
+                                    <div class="form-group" id="return-date-group" style="display: none;">
+                                        <label for="return-date">Return Date:</label>
+                                        <input type="date" id="return-date" name="return-date">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="depart-time">Departure Time:</label>
+                                        <input type="time" id="depart-time" name="depart-time" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passengers">Passengers:</label>
+                                        <input type="number" id="passengers" name="passengers" min="1" max="20" value="1" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="full-name">Full Name:</label>
+                                        <input type="text" id="full-name" name="full-name" placeholder="Your Full Name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email Address:</label>
+                                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Phone Number:</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="special-requests">Special Requests:</label>
+                                    <textarea id="special-requests" name="special-requests" rows="4" placeholder="e.g., catering preferences, ground transportation, wheelchair assistance" required></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="aircraft-preference">Aircraft Preference (Optional):</label>
+                                    <select id="aircraft-preference" name="aircraft-preference">
+                                        <option value="">No Preference</option>
+                                        <option value="light">Light Jet (4-8 passengers)</option>
+                                        <option value="midsize">Midsize Jet (6-9 passengers)</option>
+                                        <option value="super">Super Midsize (8-10 passengers)</option>
+                                        <option value="heavy">Heavy Jet (10-16 passengers)</option>
+                                        <option value="ultra">Ultra Long Range (12-18 passengers)</option>
+                                        <option value="helicopter">Helicopter (4-8 passengers)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Additional Services (Check all that apply):</label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" id="catering" name="additional-services" value="catering">
+                                            <span>Gourmet Catering</span>
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" id="ground-transport" name="additional-services" value="ground-transport">
+                                            <span>Ground Transportation</span>
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" id="concierge" name="additional-services" value="concierge">
+                                            <span>Concierge Services</span>
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" id="wheelchair" name="additional-services" value="wheelchair">
+                                            <span>Wheelchair Assistance</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="btn booking-form-btn">Request Quote</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Flight Information Section -->
+            <section class="section-title animate-on-scroll">
+                <div class="container">
+                    <div class="section-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l9 4v6c0 5.55-3.84 10.74-9 12-5.16-1.26-9-6.45-9-12V6l9-4z"/></svg></div>
+                    <span class="sub-title">FLIGHT INFORMATION</span>
+                    <h2>Understanding Your Journey</h2>
+                </div>
+            </section>
+
+            <section class="cards flight-info">
+                <div class="container">
+                    <div class="card info-card animate-on-scroll">
+                        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg></div>
+                        <h3>Booking Process</h3>
+                        <p>Submit your request and our concierge team will respond within 15 minutes with tailored options. Once you approve your custom quote, we handle all arrangements discretely and precisely.</p>
+                    </div>
+
+                    <div class="card info-card animate-on-scroll">
+                        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l10.59-10.59L22 5l-10 10z"/></svg></div>
+                        <h3>Confirmation Timeline</h3>
+                        <p>We can often arrange flights within 4–6 hours depending on availability. For peak seasons or special requests, we recommend booking 24-48 hours in advance to ensure optimal aircraft selection.</p>
+                    </div>
+
+                    <div class="card info-card animate-on-scroll">
+                        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4z"/></svg></div>
+                        <h3>Safety Standards</h3>
+                        <p>We partner exclusively with operators audited to ARGUS/WYVERN/IS-BAO standards. All aircraft undergo recurrent crew training and maintenance checks to ensure your safety is never compromised.</p>
+                    </div>
+
+                    <div class="card info-card animate-on-scroll">
+                        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7z"/></svg></div>
+                        <h3>Cancellation Policy</h3>
+                        <p>Cancellations made 48+ hours before departure receive a full refund. Within 48 hours, 50% refund is provided. For multi-leg or group bookings, special terms may apply and will be outlined in your contract.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aircraft Categories Section -->
+            <section class="section-title animate-on-scroll">
+                <div class="container">
+                    <div class="section-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
+                    <span class="sub-title">AIRCRAFT OPTIONS</span>
+                    <h2>Premium Fleet Categories</h2>
+                </div>
+            </section>
+
+            <section class="cards fleet-categories">
+                <div class="container">
+                    <div class="card fleet-card animate-on-scroll">
+                        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9L2 14v2l8-2.5V17l-3 2v1.5l4.5-1 4.5 1V19l-3-2v-3.5L21 16z"/></svg></div>
+                        <h3>Light Jets</h3>
+                        <p>4–8 passengers — efficient for short to medium flights with premium comfort and speed.</p>
+                        <ul class="fleet-specs">
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Range: 1,500–2,000 nautical miles</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Speed: 400–450 knots</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Cabin: Spacious with club seating</li>
+                        </ul>
+                    </div>
+
+                    <div class="card fleet-card animate-on-scroll">
+                        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg></div>
+                        <h3>Mid-Size Jets</h3>
+                        <p>6–9 passengers — ideal transcontinental performance with enhanced amenities.</p>
+                        <ul class="fleet-specs">
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Range: 2,000–3,000 nautical miles</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Speed: 450–500 knots</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Cabin: Stand-up height with divan</li>
+                        </ul>
+                    </div>
+
+                    <div class="card fleet-card animate-on-scroll">
+                        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg></div>
+                        <h3>Heavy Jets</h3>
+                        <p>8–16 passengers — intercontinental range with premium amenities and extended cabin space.</p>
+                        <ul class="fleet-specs">
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Range: 3,000–6,000 nautical miles</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Speed: 475–525 knots</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Cabin: Full galley with sleeping quarters</li>
+                        </ul>
+                    </div>
+
+                    <div class="card fleet-card animate-on-scroll">
+                        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l9 4v6c0 5.55-3.84 10.74-9 12-5.16-1.26-9-6.45-9-12V6l9-4z"/></svg></div>
+                        <h3>Ultra Long Range</h3>
+                        <p>10–18 passengers — nonstop intercontinental travel with full conference capabilities.</p>
+                        <ul class="fleet-specs">
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Range: 6,000+ nautical miles</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Speed: 500–550 knots</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Cabin: Full conference room with bedroom</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick CTA Section -->
+            <section class="quick-cta animate-on-scroll">
+                <div class="container">
+                    <div class="quick-cta-inner">
+                        <h3>Need Immediate Assistance?</h3>
+                        <p>Contact our 24/7 concierge team for urgent bookings or special arrangements.</p>
+                        <div class="quick-cta-actions">
+                            <a href="tel:+1-800-835-2746" class="btn btn--large">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.55.57 1 1 0 011 1V20a1 1 0 01-1 1A18 18 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.55 1 1 0 01-.21 1.11l-2.24 2.13z"/></svg>
+                                Call +1 (800) 835-2746
+                            </a>
+                            <a href="contact.html" class="btn btn--outline">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z"/></svg>
+                                Email Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">VELARION <span class="text-gold">Skies</span></a>
+                    <p>Redefining luxury air travel with bespoke private jet experiences tailored to your unique preferences.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/velarionskies" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07C2 17.11 5.64 21.18 10.44 22v-7.02H7.9v-2.9h2.54V9.58c0-2.5 1.5-3.88 3.78-3.88 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.9h-2.34V22C18.36 21.18 22 17.11 22 12.07z"/></svg>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                        <a href="https://x.com/velarionskies" aria-label="X / Twitter" target="_blank" rel="noopener noreferrer">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 5.92c-.63.28-1.3.47-2 .55.72-.43 1.27-1.12 1.53-1.94-.67.4-1.42.69-2.22.85C18.6 4.42 17.66 4 16.62 4c-1.6 0-2.9 1.3-2.9 2.9 0 .23.03.45.08.67C10.6 7.42 7.12 5.5 4.9 2.88c-.25.43-.39.93-.39 1.5 0 1.03.52 1.94 1.3 2.47-.48-.02-.93-.15-1.33-.36v.04c0 1.4.99 2.57 2.3 2.84-.24.07-.49.1-.75.1-.18 0-.36-.02-.53-.05.36 1.12 1.4 1.93 2.63 1.95C6 13.1 5 13.53 4 13.53c-.27 0-.53-.02-.78-.06C5.24 14.72 6.98 15.4 8.86 15.4c5.32 0 8.24-4.4 8.24-8.24v-.38c.58-.42 1.07-.9 1.46-1.47-.5.22-1 .35-1.52.43.55-.33.98-.9 1.18-1.56z"/></svg>
+                            <span class="sr-only">X</span>
+                        </a>
+                        <a href="https://instagram.com/velarionskies" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.2A4.8 4.8 0 115.2 13 4.8 4.8 0 0112 8.2zm6.4-3.3a1.2 1.2 0 11-1.2-1.2 1.2 1.2 0 011.2 1.2z"/></svg>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a href="https://linkedin.com/company/velarionskies" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 114.98 8.5 2.5 2.5 0 014.98 3.5zM3 9h4v12H3zM9 9h3.6v1.71h.05c.5-.95 1.72-1.95 3.55-1.95C19.2 8.76 21 10.87 21 14.38V21h-4v-5.1c0-1.21-.02-2.76-1.68-2.76-1.68 0-1.94 1.31-1.94 2.66V21H9z"/></svg>
+                            <span class="sr-only">LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+
+                <nav class="footer-col" aria-label="Explore">
+                    <h3 class="footer-heading">Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="booking.html" aria-current="page">Book Flight</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="legal.html">Legal</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-col" aria-label="Legal">
+                    <h3 class="footer-heading">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="terms-conditions.html">Terms of Use</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                        <li><a href="accessibility.html">Accessibility</a></li>
+                    </ul>
+                </nav>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Contact</h3>
+                    <ul class="footer-links contact-info">
+                        <li>
+                            <svg class="icon icon-phone" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.55.57 1 1 0 011 1V20a1 1 0 01-1 1A18 18 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.55 1 1 0 01-.21 1.11l-2.24 2.13z" fill="currentColor"/></svg>
+                            <a href="tel:+1-800-835-2746" id="footer-phone">+1 (800) 835-2746</a>
+                        </li>
+                        <li>
+                            <svg class="icon icon-envelope" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M2 6l10 7 10-7v10a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" fill="currentColor"/></svg>
+                            <a href="mailto:charter@velarion-skies.com" id="footer-email">charter@velarion-skies.com</a>
+                        </li>
+                        <li>
+                            <svg class="icon icon-map" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 5.5 11.1 6.3 11.9.3.3.8.3 1.1 0C13.5 20.1 19 14.2 19 9c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z" fill="currentColor"/></svg>
+                            <span id="footer-address">1250 Aviation Blvd, Los Angeles, CA 90045</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 VELARION Skies. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+    
+    <script>
+        // Set minimum date to today for date inputs
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('depart-date').min = today;
+            document.getElementById('return-date').min = today;
+            
+            // Trip type selector functionality
+            const tripButtons = document.querySelectorAll('.trip-type-btn');
+            const tripTypeInput = document.getElementById('trip-type');
+            const returnDateGroup = document.getElementById('return-date-group');
+            
+            tripButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    tripButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Update hidden input value
+                    tripTypeInput.value = this.dataset.value;
+                    
+                    // Show/hide return date field based on selection
+                    if (this.dataset.value === 'round-trip') {
+                        returnDateGroup.style.display = 'block';
+                    } else {
+                        returnDateGroup.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Form submission handling
+            const bookingForm = document.getElementById('bookingForm');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple validation
+                    const requiredFields = [
+                        'from',
+                        'to',
+                        'depart-date',
+                        'depart-time',
+                        'passengers',
+                        'full-name',
+                        'email',
+                        'phone',
+                        'special-requests'
+                    ];
+                    
+                    let isValid = true;
+                    
+                    requiredFields.forEach(fieldId => {
+                        const field = document.getElementById(fieldId);
+                        if (!field.value.trim()) {
+                            field.classList.add('error');
+                            isValid = false;
+                        } else {
+                            field.classList.remove('error');
+                        }
+                    });
+                    
+                    if (isValid) {
+                        // In a real implementation, you would submit the form to a server
+                        alert('Thank you for your booking request. Our concierge team will contact you shortly with a tailored solution.');
+                        
+                        // Reset form
+                        bookingForm.reset();
+                        
+                        // Reset trip type buttons
+                        tripButtons.forEach(btn => btn.classList.remove('active'));
+                        document.querySelector('.trip-type-btn[data-value="one-way"]').classList.add('active');
+                        tripTypeInput.value = 'one-way';
+                        returnDateGroup.style.display = 'none';
+                    } else {
+                        alert('Please fill in all required fields.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
