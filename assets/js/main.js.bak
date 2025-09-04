@@ -1,0 +1,313 @@
+function pad2(n){ return String(n).padStart(2,'0'); }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const flightData = {
+    "NYC": { "VNY":5.5,"MIA":2.7,"DAL":3.1,"MDW":2.2,"LAS":4.3,"LTN":7.5,"GVA":7.8,"MCM":8.1,"DXB":12.2,"SIN":18.9,"CGH":9.2,"SYD":19.8,"HKG":15.2,"BOS":3.3,"ATL":2.1,"SEA":5.5,"FRA":7.2,"ZRH":7.6,"CDG":7.9,"FCO":8.8,"MAD":8.5,"LIS":8.2,"ARN":6.9,"HEL":7.7,"WAW":7.4,"IST":10.1,"TLV":10.8,"DOH":14.2,"BOM":14.1,"KUL":17.8,"MNL":17.1,"AKL":16.5,"JNB":13.1,"CAI":10.5,"MOW":9.8 },
+    "LON": { "TEB":7.2,"VNY":11.2,"MIA":8.2,"DAL":9.2,"MDW":7.9,"LAS":10.5,"GVA":1.2,"MCM":1.9,"DXB":6.9,"SIN":13.5,"CGH":11.8,"SYD":20.8,"HKG":13.2,"BOS":6.5,"ATL":7.2,"SEA":10.2,"FRA":1.0,"ZRH":1.5,"CDG":0.8,"FCO":2.2,"MAD":1.5,"LIS":2.2,"ARN":1.9,"HEL":2.2,"WAW":2.5,"IST":3.2,"TLV":3.9,"DOH":6.5,"BOM":8.2,"KUL":12.9,"MNL":14.2,"AKL":21.5,"JNB":11.5,"CAI":4.9,"MOW":3.2 },
+    "PAR": { "TEB":7.9,"VNY":11.9,"MIA":8.9,"DAL":9.9,"MDW":8.6,"LAS":11.2,"GVA":1.9,"MCM":2.6,"DXB":7.6,"SIN":14.2,"CGH":11.9,"SYD":21.6,"HKG":13.9,"BOS":7.2,"ATL":7.9,"SEA":10.9,"FRA":1.2,"ZRH":1.5,"CDG":0.5,"FCO":1.2,"MAD":1.2,"LIS":1.9,"ARN":2.2,"HEL":2.5,"WAW":2.2,"IST":2.9,"TLV":4.2,"DOH":7.2,"BOM":8.9,"KUL":14.5,"MNL":15.2,"AKL":22.2,"JNB":12.5,"CAI":5.9,"MOW":3.5 },
+    "TYO": { "TEB":13.9,"VNY":12.2,"MIA":15.5,"DAL":14.2,"MDW":13.5,"LAS":14.9,"GVA":11.5,"MCM":12.2,"DXB":7.5,"SIN":6.2,"CGH":18.9,"SYD":9.5,"HKG":3.9,"BOS":14.5,"ATL":15.2,"SEA":10.9,"FRA":10.5,"ZRH":10.9,"CDG":11.2,"FCO":12.5,"MAD":11.5,"LIS":12.2,"ARN":8.2,"HEL":8.9,"WAW":9.5,"IST":8.2,"TLV":9.9,"DOH":7.2,"BOM":6.9,"KUL":4.9,"MNL":3.5,"AKL":10.2,"JNB":16.5,"CAI":11.9,"MOW":8.5 },
+    "DXB": { "TEB":12.2,"VNY":16.2,"MIA":14.5,"DAL":15.2,"MDW":13.9,"LAS":15.5,"GVA":6.5,"MCM":7.2,"SIN":5.9,"CGH":11.5,"SYD":13.9,"HKG":7.5,"TYO":7.2,"BOS":13.2,"ATL":13.9,"SEA":15.5,"FRA":6.2,"ZRH":6.9,"CDG":6.5,"FCO":5.2,"MAD":7.5,"LIS":8.2,"ARN":5.9,"HEL":6.5,"WAW":5.5,"IST":2.5,"TLV":3.2,"DOH":1.0,"BOM":3.2,"KUL":6.9,"MNL":8.2,"AKL":14.5,"JNB":7.9,"CAI":3.5,"MOW":4.9 },
+    "SYD": { "TEB":20.3,"VNY":18.5,"MIA":21.8,"DAL":20.5,"MDW":19.8,"LAS":20.2,"GVA":21.2,"MCM":21.5,"DXB":14.2,"SIN":10.8,"CGH":15.2,"HKG":9.8,"TYO":10.5,"BOS":20.8,"ATL":21.5,"SEA":15.8,"FRA":21.5,"ZRH":21.8,"CDG":22.0,"FCO":22.5,"MAD":22.2,"LIS":22.8,"ARN":19.5,"HEL":20.2,"WAW":20.8,"IST":18.5,"TLV":19.2,"DOH":16.8,"BOM":10.5,"KUL":8.2,"MNL":7.8,"AKL":3.5,"JNB":14.8,"CAI":17.5,"MOW":18.2 }
+  };
+
+  // Populate all departure <select> elements from the canonical flightData
+  function populateDepartureSelectors() {
+    document.querySelectorAll('.departure-selector').forEach(sel => {
+      const dest = sel.dataset.destination;
+      if (!dest || !flightData[dest]) return;
+
+      // Convert to entries and sort by shortest duration first
+      const entries = Object.entries(flightData[dest]).sort((a,b) => a[1] - b[1]);
+
+      // Build options: placeholder + sorted list
+      sel.innerHTML = '';
+      const placeholder = document.createElement('option');
+      placeholder.value = '';
+      placeholder.textContent = 'Select departure';
+      placeholder.disabled = true;
+      placeholder.selected = true;
+      sel.appendChild(placeholder);
+
+      entries.forEach(([code, hrs]) => {
+        const opt = document.createElement('option');
+        // value is the airport code - compute() will look this up in flightData
+        opt.value = code;
+        opt.textContent = `${code} — ${hrs}h`;
+        sel.appendChild(opt);
+      });
+    });
+  }
+
+  // Ensure departure selectors are populated early
+  populateDepartureSelectors();
+
+  // Mobile menu functionality
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (mobileMenu && navLinks) {
+    mobileMenu.addEventListener('click', () => {
+      const isOpen = navLinks.classList.contains('active');
+      navLinks.classList.toggle('active');
+      // Toggle an 'open' class on the button so CSS can animate the inline SVG
+      mobileMenu.classList.toggle('open');
+      mobileMenu.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+          navLinks.classList.remove('active');
+          const icon = mobileMenu.querySelector && mobileMenu.querySelector('i');
+          if (icon) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-xmark');
+          }
+          mobileMenu.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  }
+
+  // Number counting animation
+  const animateNumbers = () => {
+    const funfactItems = document.querySelectorAll('.funfact-item');
+    
+    funfactItems.forEach(item => {
+      const targetElement = item.querySelector('h3');
+      if(targetElement) {
+        const targetText = targetElement.getAttribute('data-target');
+        
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+          if (!targetElement.classList.contains('animated')) {
+            targetElement.classList.add('animated');
+            
+            let current = 0;
+            const target = parseInt(targetText.replace(/[^0-9]/g, ''));
+            const duration = 1000;
+            
+            let increment;
+            if (target >= 10000) {
+              increment = Math.ceil(target / 20);
+            } else if (target >= 1000) {
+              increment = Math.ceil(target / 15);
+            } else if (target >= 100) {
+              increment = Math.ceil(target / 10);
+            } else {
+              increment = targetText.includes('+') ? 5 : 10;
+            }
+            
+            const steps = Math.ceil(target / increment);
+            const stepTime = Math.max(duration / steps, 10);
+            
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              targetElement.textContent = current.toLocaleString() + targetText.replace(/[0-9]/g, '');
+            }, stepTime);
+          }
+        }
+      }
+    });
+  };
+
+  // Scroll animations
+  const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    
+    elements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementBottom = element.getBoundingClientRect().bottom;
+      
+      if (elementTop < window.innerHeight && elementBottom > 0) {
+        element.classList.add('animate');
+      }
+    });
+  };
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // FAQ functionality
+  document.querySelectorAll('.faq-item').forEach((item, i) => {
+    const btn = item.querySelector('.faq-question');
+    const panel = item.querySelector('.faq-answer');
+    
+    if(btn && panel) {
+      const id = `faq-panel-${i}`;
+      
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-controls', id);
+      panel.id = id;
+      panel.setAttribute('role', 'region');
+      panel.setAttribute('aria-hidden', 'true');
+      
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        
+        document.querySelectorAll('.faq-question[aria-expanded="true"]').forEach(b => {
+          if(b !== btn) {
+            b.setAttribute('aria-expanded', 'false');
+            const p = document.getElementById(b.getAttribute('aria-controls'));
+            if (p) { 
+              p.style.display = 'none'; 
+              p.setAttribute('aria-hidden', 'true');
+            }
+          }
+        });
+        
+        btn.setAttribute('aria-expanded', String(!open));
+        panel.style.display = open ? 'none' : 'block';
+        panel.setAttribute('aria-hidden', String(open));
+      });
+    }
+  });
+
+  // Quick Quote modal functionality
+  const quickQuoteBtn = document.getElementById('quickQuoteBtn');
+  if(quickQuoteBtn) {
+    quickQuoteBtn.addEventListener('click', () => {
+      alert('Quote form would open here. In a real implementation, this would open a modal or navigate to a dedicated page.');
+    });
+  }
+
+  // Add trust promise to destination cards
+  const trustPromise = document.createElement('p');
+  trustPromise.className = 'trust-promise';
+  trustPromise.textContent = 'No membership. No hidden fees. 15-minute response.';
+  
+  document.querySelectorAll('.destination-actions').forEach(actions => {
+    const bookNowBtn = actions.querySelector('.destination-btn.primary');
+    if (bookNowBtn) {
+      actions.insertBefore(trustPromise.cloneNode(true), bookNowBtn.nextSibling);
+    }
+  });
+
+  // Enhanced flight calculator with stop information
+  document.querySelectorAll('.flight-calculator').forEach(fc => {
+    const craft = fc.querySelector('.aircraft-selector');
+    const dep = fc.querySelector('.departure-selector');
+    const out = fc.querySelector('.calc-result');
+    
+    if(craft && dep && out) {
+      const destination = craft.dataset.destination;
+      const baseTimes = flightData[destination];
+
+      function compute(){
+        const raw = String(dep.value || '');
+        const key = raw.includes('-') ? raw.split('-')[0] : raw;
+        const baseTime = Number.parseFloat(baseTimes?.[key]);
+        if (!baseTime || Number.isNaN(baseTime)) {
+          out.textContent = '';
+          return;
+        }
+
+        let t = baseTime;
+        const m = craft.value;
+        let stops = 0;
+        
+        if (m==='light') {
+          t*=1.25;
+          stops = Math.floor(baseTime / 5);
+        } else if (m==='midsize') {
+          t*=1.15;
+          stops = Math.floor(baseTime / 7);
+        } else if (m==='super') {
+          t = baseTime;
+          stops = Math.floor(baseTime / 10);
+        } else if (m==='heavy') {
+          t*=0.85;
+          stops = Math.floor(baseTime / 15);
+        } else if (m==='ultra') {
+          t*=0.75;
+          stops = 0;
+        }
+
+        const h = Math.floor(t), mins = Math.round((t-h)*60);
+        const stopText = stops === 0 ? "nonstop" : stops === 1 ? "1 stop" : `${stops} stops`;
+        out.textContent = `Estimated flight time: ${h}h${pad2(mins)} (${stopText})`;
+      }
+
+      [craft, dep].forEach(el => el.addEventListener('change', compute));
+      compute();
+    }
+  });
+
+  // Initial animations
+  animateNumbers();
+  animateOnScroll();
+
+  // Attach scroll event listeners
+  window.addEventListener('scroll', animateNumbers);
+  window.addEventListener('scroll', animateOnScroll);
+
+  // Accessibility helpers
+  // 1) Focus main content when back-to-top clicked for screen reader users
+  document.querySelectorAll('.back-to-top').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      // allow scroll behavior code above to run first
+      const main = document.getElementById('mainContent');
+      if (main) {
+        // small timeout to let smooth scroll finish visually, then focus
+        setTimeout(() => {
+          main.setAttribute('tabindex', '-1');
+          main.focus({ preventScroll: true });
+          // cleanup tabindex after focus
+          main.removeAttribute('tabindex');
+        }, 400);
+      }
+    });
+  });
+
+  // 2) Treat href="#" anchors as buttons (prevent accidental navigation)
+  document.querySelectorAll('a[href="#"]').forEach(a => {
+    a.setAttribute('role', 'button');
+    a.addEventListener('click', (ev) => ev.preventDefault());
+  });
+
+  // 3) Mark decorative <i> icon elements as aria-hidden
+  document.querySelectorAll('i').forEach(i => {
+    if (!i.hasAttribute('aria-label') && !i.closest('a')) {
+      i.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  // 4) Normalize inline SVG attributes so CSS controls sizing and improve accessibility
+  //    - remove explicit width/height on SVGs unless data-preserve-size is present
+  //    - ensure decorative SVGs are aria-hidden and not focusable
+  document.querySelectorAll('svg').forEach(svg => {
+    try {
+      // skip SVGs explicitly marked to preserve dimensions
+      if (!svg.hasAttribute('data-preserve-size')) {
+        if (svg.hasAttribute('width')) svg.removeAttribute('width');
+        if (svg.hasAttribute('height')) svg.removeAttribute('height');
+      }
+
+      // ensure SVGs inherit color from CSS and are not keyboard-focusable
+      svg.setAttribute('focusable', 'false');
+
+      // determine if the SVG is purely decorative: not in a link/button and has no title/desc/role
+      const isInInteractive = svg.closest('a,button,[role="button"]');
+      const hasLabel = svg.querySelector('title,desc') || svg.getAttribute('role') || svg.getAttribute('aria-label') || svg.getAttribute('aria-labelledby');
+
+      if (!isInInteractive && !hasLabel) {
+        svg.setAttribute('aria-hidden', 'true');
+      }
+    } catch (e) {
+      // defensive: don't let one malformed SVG break the script
+      // console.debug('svg-normalize:', e);
+    }
+  });
+});

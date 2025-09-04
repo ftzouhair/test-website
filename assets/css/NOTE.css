@@ -1,0 +1,15 @@
+/*
+NOTE: CSS STRUCTURE AND LOAD ORDER
+
+1. critical.css:
+   - Contains only the essential, above-the-fold styles needed for the initial paint.
+   - This includes the header, navigation, and hero section.
+   - It should be inlined in the <head> of the HTML document for the fastest possible rendering.
+
+2. style.css:
+   - Contains all other styles for the site.
+   - This file should be loaded asynchronously to avoid blocking the initial render.
+   - Example: <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
+
+By separating the CSS in this way, we ensure that the user sees the main content of the page as quickly as possible, improving the perceived performance of the site.
+*/

@@ -1,0 +1,707 @@
+/* Enhanced Service Cards with Sophisticated Hover Animations */
+
+/* Base card styles with 3D effect */
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* 3D tilt effect on hover */
+.card:hover {
+  transform: rotateX(5deg) rotateY(5deg) translateZ(10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Card icon with lighting effect */
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: var(--accent);
+  color: var(--gold);
+  border-radius: 50%;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Lighting effect on icon hover */
+.card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(200,164,107,0.3);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--gold) 100%);
+}
+
+/* Liquid metal effect for buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 5px;
+  transition: all var(--ease);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+/* Liquid metal effect on button hover */
+.btn:hover {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--gold) 50%, var(--accent) 100%);
+  background-size: 200% auto;
+  animation: liquidMetal 2s linear infinite;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Liquid metal animation */
+@keyframes liquidMetal {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Outline button variant */
+.btn--outline {
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+}
+
+.btn--outline:hover {
+  background: rgba(7,31,51,0.1);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Service card specific styles */
+.service-card {
+  text-align: center;
+  padding: 30px 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.service-card .card-icon {
+  margin: 0 auto 20px;
+  width: 80px;
+  height: 80px;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .card-icon {
+  transform: scale(1.2) rotate(10deg);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--accent) 100%);
+}
+
+.service-card h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.5rem;
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover h3 {
+  color: var(--gold);
+}
+
+.service-card p {
+  margin: 0 0 20px 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Service button styles */
+.service-btn {
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* How it works card styles */
+.how-it-works-card {
+  text-align: center;
+  padding: 30px;
+  background: var(--card);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.how-it-works-card:hover {
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.how-it-works-card .icon {
+  font-size: 3rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.how-it-works-card:hover .icon {
+  transform: scale(1.2) rotate(10deg);
+  filter: drop-shadow(0 0 10px rgba(200,164,107,0.5));
+}
+
+.how-it-works-card h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.how-it-works-card p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Performance card styles */
+.performance-card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.performance-card:hover {
+  transform: translateY(-5px) rotateX(3deg);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.performance-card .icon {
+  font-size: 2rem;
+  color: var(--gold);
+  transition: all 0.3s ease;
+}
+
+.performance-card:hover .icon {
+  transform: scale(1.3) rotate(15deg);
+  filter: drop-shadow(0 0 8px rgba(200,164,107,0.5));
+}
+
+.performance-card h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.performance-card p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Destination card styles */
+.destination-card {
+  background: linear-gradient(135deg, rgba(200, 164, 107, 0.1) 0%, rgba(247, 247, 247, 0.8) 100%) !important;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  color: var(--text) !important;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.destination-card.featured {
+  border: 2px solid var(--gold);
+}
+
+.destination-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.destination-image .img-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.destination-card:hover .destination-image .img-placeholder {
+  transform: scale(1.1);
+}
+
+.destination-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 15px;
+}
+
+.destination-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.destination-badge.popular {
+  background: var(--gold);
+  color: var(--accent);
+}
+
+.destination-badge.business {
+  background: var(--accent);
+  color: white;
+}
+
+.destination-badge.luxury {
+  background: var(--gold);
+  color: var(--accent);
+}
+
+.destination-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.destination-header {
+  margin-bottom: 10px;
+}
+
+.destination-header h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+
+.destination-country {
+  color: var(--muted);
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.flight-calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.flight-calculator select {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background: white;
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.airport-info {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 3px;
+}
+
+.destination-description {
+  margin: 0 0 10px 0;
+  color: var(--text);
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.destination-features {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.destination-features span {
+  display: flex;
+  align-items: center;
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+.destination-features i {
+  margin-right: 4px;
+  color: var(--gold);
+  font-size: 0.9rem;
+}
+
+.exclusive-perks {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.exclusive-perks span {
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.exclusive-perks i {
+  margin-right: 4px;
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+
+.destination-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.destination-actions .btn {
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+.trust-promise {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 5px 0;
+}
+
+.secondary-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Funfact item styles */
+.funfact-item {
+  padding: 20px;
+  transition: all 0.3s ease;
+  text-align: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.funfact-item:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.funfact-item h3 {
+  font-size: 3rem;
+  color: var(--gold);
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.funfact-item:hover h3 {
+  transform: scale(1.1);
+  color: var(--accent);
+}
+
+.funfact-item p {
+  margin: 0;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+/* Testimonial styles */
+.testimonial {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-style: italic;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px) rotateX(3deg);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.testimonial p {
+  margin: 0 0 10px 0;
+}
+
+.testimonial cite {
+  display: block;
+  text-align: right;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* FAQ item styles */
+.faq-item {
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: var(--card);
+  border: 1px solid #eee;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background: rgba(7,31,51,0.05);
+  border-color: var(--gold);
+}
+
+.faq-answer {
+  padding: 15px;
+  background: var(--card);
+  border: 1px solid #eee;
+  border-top: none;
+  display: none;
+  color: var(--muted);
+}
+
+/* Quick CTA styles */
+.quick-cta {
+  text-align: center;
+  padding: 50px 0;
+  background: var(--bg);
+  transition: all 0.3s ease;
+}
+
+.quick-cta:hover {
+  background: linear-gradient(135deg, var(--bg) 0%, var(--card) 100%);
+}
+
+.quick-cta h2 {
+  margin: 0 0 20px 0;
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.quick-cta p {
+  margin: 0 0 30px 0;
+  color: var(--text);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quick-cta .btn {
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.quick-cta .btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Subcopy styles */
+.subcopy {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    padding: 15px;
+  }
+  
+  .service-card {
+    padding: 20px 15px;
+  }
+  
+  .service-card .card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .how-it-works-card {
+    padding: 20px;
+  }
+  
+  .how-it-works-card .icon {
+    font-size: 2rem;
+  }
+  
+  .performance-card {
+    padding: 20px;
+  }
+  
+  .performance-card .icon {
+    font-size: 1.5rem;
+  }
+  
+  .destination-image {
+    height: 180px;
+  }
+  
+  .destination-content {
+    padding: 15px;
+  }
+  
+  .destination-header h3 {
+    font-size: 1.4rem;
+  }
+  
+  .destination-description {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+  
+  .flight-calculator {
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .flight-calculator select {
+    width: 100%;
+  }
+  
+  .destination-features, .exclusive-perks {
+    gap: 8px;
+  }
+  
+  .destination-features span, .exclusive-perks span {
+    font-size: 0.8rem;
+  }
+  
+  .destination-actions .btn {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .funfact-item {
+    padding: 15px;
+  }
+  
+  .funfact-item h3 {
+    font-size: 2rem;
+  }
+  
+  .funfact-item p {
+    font-size: 0.9rem;
+  }
+  
+  .testimonial {
+    padding: 15px;
+  }
+  
+  .quick-cta h2 {
+    font-size: 1.8rem;
+  }
+  
+  .quick-cta p {
+    font-size: 0.9rem;
+  }
+  
+  .quick-cta .btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    margin: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card .card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+  
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .destination-image {
+    height: 150px;
+  }
+  
+  .destination-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .funfact-item h3 {
+    font-size: 1.8rem;
+  }
+  
+  .quick-cta h2 {
+    font-size: 1.5rem;
+  }
+}

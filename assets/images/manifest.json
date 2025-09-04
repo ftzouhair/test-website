@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "filename": "hero-background.webp",
+    "format": "webp",
+    "dimensions": "1920x1080",
+    "compression": "Lossy, quality 75"
+  },
+  "about-main": {
+    "filename": "about-main.webp",
+    "format": "webp",
+    "dimensions": "600x400",
+    "compression": "Lossy, quality 80"
+  },
+  "about-sub": {
+    "filename": "about-sub.webp",
+    "format": "webp",
+    "dimensions": "300x300",
+    "compression": "Lossy, quality 80"
+  },
+  "destinations": {
+    "nyc": {
+      "filename": "destination-nyc.webp",
+      "format": "webp",
+      "dimensions": "400x250",
+      "compression": "Lossy, quality 75"
+    },
+    "lon": {
+      "filename": "destination-lon.webp",
+      "format": "webp",
+      "dimensions": "400x250",
+      "compression": "Lossy, quality 75"
+    },
+    "par": {
+      "filename": "destination-par.webp",
+      "format": "webp",
+      "dimensions": "400x250",
+      "compression": "Lossy, quality 75"
+    },
+    "tyo": {
+      "filename": "destination-tyo.webp",
+      "format": "webp",
+      "dimensions": "400x250",
+      "compression": "Lossy, quality 75"
+    },
+    "dxb": {
+      "filename": "destination-dxb.webp",
+      "format": "webp",
+      "dimensions": "400x250",
+      "compression": "Lossy, quality 75"
+    },
+    "syd": {
+      "filename": "destination-syd.webp",
+      "format": "webp",
+      "dimensions": "400x250",
+      "compression": "Lossy, quality 75"
+    }
+  },
+  "favicon": {
+    "filename": "favicon.ico",
+    "format": "ico",
+    "dimensions": "32x32",
+    "compression": "Lossless"
+  },
+  "og-image": {
+    "filename": "og-image.jpg",
+    "format": "jpg",
+    "dimensions": "1200x630",
+    "compression": "Lossy, quality 85"
+  },
+  "logos": {
+    "main": {
+      "filename": "logo.svg",
+      "format": "svg",
+      "dimensions": "N/A",
+      "compression": "Lossless"
+    }
+  },
+  "icons": {
+    "font-awesome": {
+      "source": "CDN",
+      "version": "6.4.0"
+    }
+  }
+}

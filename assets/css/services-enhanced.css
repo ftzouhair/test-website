@@ -1,0 +1,469 @@
+/* Enhanced Services Page Styles */
+
+/* Hero section */
+.services-hero {
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--bg) 100%);
+  color: var(--card);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-hero .hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.services-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+.services-hero p.lead {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.services-hero .subcopy {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.services-hero .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.services-hero .animate-on-scroll.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services-hero .hero-scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  animation: bounce 2s infinite;
+}
+
+.services-hero .hero-scroll-indicator span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+/* Services grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.service-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-card .card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: rgba(7, 31, 51, 0.1);
+  color: var(--gold);
+  border-radius: 50%;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin: 0 0 15px 0;
+}
+
+.service-card p {
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.service-card .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Fleet grid */
+.fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.fleet-card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.fleet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.fleet-card .card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(7, 31, 51, 0.1);
+  color: var(--gold);
+  border-radius: 50%;
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+}
+
+.fleet-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--accent);
+  margin: 0 0 10px 0;
+}
+
+.fleet-card p {
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0 0 15px 0;
+  font-size: 0.95rem;
+}
+
+/* Safety section */
+.safety-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.safety-card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.safety-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.safety-card .card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: rgba(7, 31, 51, 0.1);
+  color: var(--gold);
+  border-radius: 50%;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.safety-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin: 0 0 15px 0;
+}
+
+.safety-card p {
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.badges-card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.badges-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.badges-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.badges-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.badges-list li:last-child {
+  margin-bottom: 0;
+}
+
+.badges-list svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* Quick CTA section */
+.quick-cta {
+  background: linear-gradient(135deg, var(--accent) 0%, #1a3a5f 100%);
+  color: white;
+  border-radius: 16px;
+  padding: 50px 30px;
+  text-align: center;
+  margin: 60px 0;
+}
+
+.quick-cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--gold);
+}
+
+.quick-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.quick-cta .btn {
+  margin: 0 10px 10px;
+}
+
+.quick-cta .subcopy {
+  font-size: 0.8125rem;
+  color: var(--gold);
+  margin-top: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .services-hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .services-hero p.lead {
+    font-size: 1.1rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  
+  .service-card {
+    padding: 25px;
+  }
+  
+  .fleet-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .fleet-card {
+    padding: 20px;
+  }
+  
+  .safety-section {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  
+  .safety-card, .badges-card {
+    padding: 25px;
+  }
+  
+  .quick-cta {
+    padding: 40px 25px;
+    margin: 50px 0;
+  }
+  
+  .quick-cta h2 {
+    font-size: 1.8rem;
+  }
+  
+  .quick-cta p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero {
+    padding: 100px 0 60px;
+  }
+  
+  .services-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .services-hero p.lead {
+    font-size: 1rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .service-card {
+    padding: 20px;
+  }
+  
+  .fleet-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .fleet-card {
+    padding: 15px;
+  }
+  
+  .safety-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .safety-card, .badges-card {
+    padding: 20px;
+  }
+  
+  .quick-cta {
+    padding: 30px 20px;
+    margin: 40px 0;
+  }
+  
+  .quick-cta h2 {
+    font-size: 1.6rem;
+  }
+  
+  .quick-cta p {
+    font-size: 0.95rem;
+  }
+  
+  .quick-cta .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-hero {
+    padding: 80px 0 40px;
+  }
+  
+  .services-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .services-hero p.lead {
+    font-size: 0.95rem;
+  }
+  
+  .services-hero .hero-content {
+    padding: 0 15px;
+  }
+  
+  .services-grid {
+    gap: 15px;
+  }
+  
+  .service-card {
+    padding: 15px;
+  }
+  
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .fleet-grid {
+    gap: 15px;
+  }
+  
+  .fleet-card h4 {
+    font-size: 1.2rem;
+  }
+  
+  .safety-section {
+    gap: 15px;
+  }
+  
+  .safety-card, .badges-card {
+    padding: 15px;
+  }
+  
+  .quick-cta {
+    padding: 25px 15px;
+    margin: 30px 0;
+  }
+  
+  .quick-cta h2 {
+    font-size: 1.4rem;
+  }
+  
+  .quick-cta p {
+    font-size: 0.9rem;
+  }
+}

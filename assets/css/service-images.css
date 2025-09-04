@@ -1,0 +1,85 @@
+/* Service Image Placeholders */
+.service-image-placeholder {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.service-image-placeholder::before {
+  content: "Service Image";
+  color: #888;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-img {
+  transform: scale(1.05);
+}
+
+/* Fleet Image Placeholders */
+.fleet-image-placeholder {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.fleet-image-placeholder::before {
+  content: "Aircraft Image";
+  color: #888;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.fleet-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.fleet-card:hover .fleet-img {
+  transform: scale(1.05);
+}
+
+/* Image Loading States */
+.service-img.loading,
+.fleet-img.loading {
+  opacity: 0.5;
+}
+
+.service-img.error,
+.fleet-img.error {
+  opacity: 0.3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .service-image-placeholder {
+    height: 150px;
+  }
+  
+  .fleet-image-placeholder {
+    height: 100px;
+  }
+}
