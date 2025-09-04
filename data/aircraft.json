@@ -1,0 +1,122 @@
+[
+  {
+    "id": "light",
+    "name": "Light Jets",
+    "passengers": "4–8",
+    "description": "Efficient for short to medium flights with premium comfort and speed.",
+    "specs": [
+      {
+        "label": "Range",
+        "value": "1,500–2,000 nautical miles"
+      },
+      {
+        "label": "Speed",
+        "value": "400–450 knots"
+      },
+      {
+        "label": "Cabin",
+        "value": "Spacious with club seating"
+      }
+    ]
+  },
+  {
+    "id": "midsize",
+    "name": "Mid-Size Jets",
+    "passengers": "6–9",
+    "description": "Ideal transcontinental performance with enhanced amenities.",
+    "specs": [
+      {
+        "label": "Range",
+        "value": "2,000–3,000 nautical miles"
+      },
+      {
+        "label": "Speed",
+        "value": "450–500 knots"
+      },
+      {
+        "label": "Cabin",
+        "value": "Stand-up height with divan"
+      }
+    ]
+  },
+  {
+    "id": "heavy",
+    "name": "Heavy Jets",
+    "passengers": "8–16",
+    "description": "Intercontinental range with premium amenities and extended cabin space.",
+    "specs": [
+      {
+        "label": "Range",
+        "value": "3,000–6,000 nautical miles"
+      },
+      {
+        "label": "Speed",
+        "value": "475–525 knots"
+      },
+      {
+        "label": "Cabin",
+        "value": "Full galley with sleeping quarters"
+      }
+    ]
+  },
+  {
+    "id": "ultra",
+    "name": "Ultra Long Range",
+    "passengers": "10–18",
+    "description": "Nonstop intercontinental travel with full conference capabilities.",
+    "specs": [
+      {
+        "label": "Range",
+        "value": "6,000+ nautical miles"
+      },
+      {
+        "label": "Speed",
+        "value": "500–550 knots"
+      },
+      {
+        "label": "Cabin",
+        "value": "Full conference room with bedroom"
+      }
+    ]
+  },
+  {
+    "id": "helicopter",
+    "name": "Helicopters",
+    "passengers": "4–8",
+    "description": "Swift transfers to city centers, yachts, and remote locations.",
+    "specs": [
+      {
+        "label": "Range",
+        "value": "200–400 nautical miles"
+      },
+      {
+        "label": "Speed",
+        "value": "150–200 knots"
+      },
+      {
+        "label": "Access",
+        "value": "Heliports and vertiports"
+      }
+    ]
+  },
+  {
+    "id": "air-ambulance",
+    "name": "Air Ambulances",
+    "passengers": "Medical crew + patient",
+    "description": "ICU-equipped jets and qualified medical teams for urgent transport.",
+    "specs": [
+      {
+        "label": "Medical Equipment",
+        "value": "ICU-level facilities"
+      },
+      {
+        "label": "Staff",
+        "value": "Qualified medical teams"
+      },
+      {
+        "label": "Availability",
+        "value": "24/7 worldwide"
+      }
+    ]
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "nyc",
+    "name": "New York City",
+    "country": "United States",
+    "description": "The ultimate urban experience. From Wall Street to Broadway, arrive in style at the city that never sleeps.",
+    "airport": "John F. Kennedy International Airport (JFK/KJFK)",
+    "features": [
+      "Manhattan Heliport",
+      "VIP Terminal Access"
+    ],
+    "perks": [
+      "Michelin-starred catering",
+      "Luxury ground transport"
+    ],
+    "badge": "Global Financial Hub"
+  },
+  {
+    "id": "lon",
+    "name": "London",
+    "country": "United Kingdom",
+    "description": "Experience the perfect blend of history and modernity. From the financial districts to cultural landmarks, London offers endless possibilities.",
+    "airport": "London Heathrow Airport (LHR/EGLL)",
+    "features": [
+      "London City Airport",
+      "FBO Services"
+    ],
+    "perks": [
+      "Afternoon tea service",
+      "Chauffeur service"
+    ],
+    "badge": "Historical Capital"
+  },
+  {
+    "id": "par",
+    "name": "Paris",
+    "country": "France",
+    "description": "The city of lights awaits. Experience world-class cuisine, art, and fashion in one of the world's most romantic destinations.",
+    "airport": "Paris Le Bourget Airport (LBG/LFPB)",
+    "features": [
+      "Le Bourget FBO",
+      "Fast Track Security"
+    ],
+    "perks": [
+      "French gourmet catering",
+      "Limousine service"
+    ],
+    "badge": "Cultural Capital"
+  },
+  {
+    "id": "tyo",
+    "name": "Tokyo",
+    "country": "Japan",
+    "description": "Where ancient traditions meet cutting-edge technology. Experience the perfect blend of past and future in this vibrant metropolis.",
+    "airport": "Narita International Airport (NRT/RJAA)",
+    "features": [
+      "Haneda Airport",
+      "VIP Terminal"
+    ],
+    "perks": [
+      "Kaiseki cuisine",
+      "Private transfer"
+    ],
+    "badge": "Tech Innovation Hub"
+  },
+  {
+    "id": "dxb",
+    "name": "Dubai",
+    "country": "UAE",
+    "description": "Experience opulence at its finest in this desert oasis of innovation and luxury. From architectural marvels to world-class shopping.",
+    "airport": "Dubai International Airport (DXB/OMDB)",
+    "features": [
+      "Al Maktoum Airport",
+      "Gold Class Lounge"
+    ],
+    "perks": [
+      "Middle Eastern delicacies",
+      "Luxury SUV service"
+    ],
+    "badge": "Future Forward Hub"
+  },
+  {
+    "id": "syd",
+    "name": "Sydney",
+    "country": "Australia",
+    "description": "Discover the stunning harbor city with its iconic Opera House and world-famous beaches. Experience the best of Australian culture and lifestyle.",
+    "airport": "Sydney Kingsford Smith Airport (SYD/YSSY)",
+    "features": [
+      "Bankstown Airport",
+      "Private Terminal"
+    ],
+    "perks": [
+      "Australian cuisine",
+      "Luxury car service"
+    ],
+    "badge": "Natural Wonder"
+  }
+]

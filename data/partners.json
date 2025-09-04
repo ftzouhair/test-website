@@ -1,0 +1,38 @@
+[
+  {
+    "id": "argus",
+    "name": "ARGUS International",
+    "description": "Global leader in aviation safety ratings and analytics",
+    "logo": "assets/images/logos/partners/argus-logo.png"
+  },
+  {
+    "id": "wyvern",
+    "name": "Wyvern Inc.",
+    "description": "Provider of aviation safety intelligence and risk management",
+    "logo": "assets/images/logos/partners/wyvern-logo.png"
+  },
+  {
+    "id": "isbao",
+    "name": "IS-BAO",
+    "description": "International Standard for Business Aircraft Operations",
+    "logo": "assets/images/logos/partners/isbao-logo.png"
+  },
+  {
+    "id": "signature",
+    "name": "Signature Aviation",
+    "description": "Global FBO and ground handling services",
+    "logo": "assets/images/logos/partners/signature-logo.png"
+  },
+  {
+    "id": "airbus",
+    "name": "Airbus Corporate Jets",
+    "description": "Luxury VIP aircraft solutions",
+    "logo": "assets/images/logos/partners/airbus-logo.png"
+  },
+  {
+    "id": "boeing",
+    "name": "Boeing Business Jets",
+    "description": "Premium private jet configurations",
+    "logo": "assets/images/logos/partners/boeing-logo.png"
+  }
+]
